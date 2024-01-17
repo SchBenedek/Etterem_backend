@@ -16,7 +16,7 @@ const db = mysql.createPool({
 app.use(cors());
 
 app.get('/', (req,res)=>{
-    res.send("alma");
+    res.send("ok");
 });
 
 app.get('/nyitvatartas', async (req,res)=>{

@@ -126,12 +126,17 @@ CREATE TABLE italok (
 
 -- Előételek beszúrása
 INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Tenger gyümölcsei', 3500),
-    ('Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Vegetáriánus', 2800);
+    ('Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', 3500),
+    ('Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', 2800);
+    ('Sajttál', 'Tej', 'Előétel', 2500);
 
 -- Levesek beszúrása
 INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Vegetáriánus', 1500),
+    ('Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', 1500),
+    ('Csirkés húsleves', 'Zeller, hagyma', 'Leves', 1000),
+    ('Halászlé pontyból', 'Hal', 'Leves', 2000),
+    ('Halászlé harcsából', 'Hal', 'Leves', 2000),
+    ('Tejszínes gyümölcsleves', 'Tejszín', 'Leves', 1800),
     -- További levesek ...
 
 -- Főételek, köretek, desszertek és italok beszúrása hasonló módon
@@ -139,32 +144,48 @@ INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
 
 -- Példa főételek
 INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Hal', 4500),
-    ('Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Hús', 3200),
+    ('Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', 4500),
+    ('Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', 3200),
+    ('Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', 3000),
+    ('Sült Keszeg', 'Hal', 'Főétel', 4200),
+    ('Milánói Makaróni', 'Glutén', 'Főétel', 2800),
+    ('Rántott csirkecomb', 'Tojás, glutén', 'Főétel', 2500),
+
     -- További főételek ...
 
 -- Példa köretek
 INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
     ('Petrezselymes Burgonyapüré', 'Tej', 'Köret', 1200),
     ('Friss Zöldségkeverék', 'Nincs', 'Köret', 1000),
+    ('Burgonyahasáb', 'Nincs', 'Köret', 1000),
+    ('Főtt rizs', 'Nincs', 'Köret', 1000),
     -- További köretek ...
 
 -- Példa desszertek
 INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
     ('Csokoládé Mousse', 'Tej, tojás', 'Sütemény', 1800),
     ('Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', 2000),
+    ('Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', 1500),
+    ('Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', 2200),
+    ('vanilia fagylalt', 'Tej', 'Sütemény', 1700),
     -- További desszertek ...
 
 -- Példa italok
 INSERT INTO italok (nev, allergenek, kategoria, ar) VALUES
-    ('Citromos Üdítő', 'Citrom', 'Nem alkoholos', 800),
-    ('Friss Narancslé', 'Nincs', 'Nem alkoholos', 1000),
+    ('Fanta', 'Nincs', 'Nem alkoholos ital', 800),
+    ('Cappy narancs', 'Nincs', 'Nem alkoholos ital', 1000),
+    ('Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', 2000),
+    ('Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', 1000),
+    ('Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', 500),
+    ('Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', 500),
     -- További nem alkoholos italok ...
 
 -- Példa alkoholos italok
 INSERT INTO italok (nev, allergenek, kategoria, ar) VALUES
     ('Vörösbor', 'Szőlő', 'Alkoholos', 2500),
     ('Martini', 'Nincs', 'Alkoholos', 1800),
+    ('Jameson', 'Nincs', 'Alkoholos', 2800),
+    ('Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', 1500),
     -- További alkoholos italok ...
 
 
