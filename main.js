@@ -33,8 +33,15 @@ app.get('/unnepnapok', async (req,res)=>{
     res.send(rows);
 });
 
-app.get('/menu', async (req,res)=>{
-    const temp = await db.query('SELECT nev, allergenek, kategoria, ar FROM menu')
+app.get('/etelek', async (req,res)=>{
+    const temp = await db.query('SELECT nev, allergenek, kategoria, ar FROM etelek')
+    const rows = temp[0];
+    const fields = temp[1];
+    res.send(rows);
+});
+
+app.get('/italok', async (req,res)=>{
+    const temp = await db.query('SELECT nev, allergenek, kategoria, ar FROM italok')
     const rows = temp[0];
     const fields = temp[1];
     res.send(rows);
