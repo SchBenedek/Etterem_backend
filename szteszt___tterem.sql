@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Jan 13. 15:16
+-- Létrehozás ideje: 2024. Már 03. 16:54
 -- Kiszolgáló verziója: 10.4.27-MariaDB
 -- PHP verzió: 8.1.12
 
@@ -20,6 +20,79 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `szteszt_étterem`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `etelek`
+--
+
+CREATE TABLE `etelek` (
+  `id` int(11) NOT NULL,
+  `nev` varchar(255) NOT NULL,
+  `allergenek` varchar(255) DEFAULT NULL,
+  `kategoria` varchar(50) DEFAULT NULL,
+  `ar` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `etelek`
+--
+
+INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`) VALUES
+(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00'),
+(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00'),
+(3, 'Sajttál', 'Tej', 'Előétel', '2500.00'),
+(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00'),
+(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00'),
+(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00'),
+(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00'),
+(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00'),
+(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00'),
+(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00'),
+(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00'),
+(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00'),
+(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00'),
+(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00'),
+(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00'),
+(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00'),
+(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00'),
+(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00'),
+(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00'),
+(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00'),
+(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00'),
+(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00'),
+(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `italok`
+--
+
+CREATE TABLE `italok` (
+  `id` int(11) NOT NULL,
+  `nev` varchar(255) NOT NULL,
+  `allergenek` varchar(255) DEFAULT NULL,
+  `kategoria` varchar(50) DEFAULT NULL,
+  `ar` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `italok`
+--
+
+INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`) VALUES
+(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00'),
+(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00'),
+(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00'),
+(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00'),
+(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00'),
+(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00'),
+(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00'),
+(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00'),
+(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00'),
+(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00');
 
 -- --------------------------------------------------------
 
@@ -78,6 +151,18 @@ INSERT INTO `unnepnapok` (`id`, `datum`, `kezdo_idopont`, `veg_idopont`, `zarva`
 --
 
 --
+-- A tábla indexei `etelek`
+--
+ALTER TABLE `etelek`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- A tábla indexei `italok`
+--
+ALTER TABLE `italok`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- A tábla indexei `nyitvatartas`
 --
 ALTER TABLE `nyitvatartas`
@@ -94,6 +179,18 @@ ALTER TABLE `unnepnapok`
 --
 
 --
+-- AUTO_INCREMENT a táblához `etelek`
+--
+ALTER TABLE `etelek`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT a táblához `italok`
+--
+ALTER TABLE `italok`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT a táblához `nyitvatartas`
 --
 ALTER TABLE `nyitvatartas`
@@ -105,89 +202,6 @@ ALTER TABLE `nyitvatartas`
 ALTER TABLE `unnepnapok`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
-
--- Ételek tábla
-CREATE TABLE etelek (
-    id INT PRIMARY KEY,
-    nev VARCHAR(255) NOT NULL,
-    allergenek VARCHAR(255),
-    kategoria VARCHAR(50),
-    ar DECIMAL(10,2) NOT NULL
-);
-
--- Italok tábla
-CREATE TABLE italok (
-    id INT PRIMARY KEY,
-    nev VARCHAR(255) NOT NULL,
-    allergenek VARCHAR(255),
-    kategoria VARCHAR(50),
-    ar DECIMAL(10,2) NOT NULL
-);
-
--- Előételek beszúrása
-INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', 3500),
-    ('Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', 2800);
-    ('Sajttál', 'Tej', 'Előétel', 2500);
-
--- Levesek beszúrása
-INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', 1500),
-    ('Csirkés húsleves', 'Zeller, hagyma', 'Leves', 1000),
-    ('Halászlé pontyból', 'Hal', 'Leves', 2000),
-    ('Halászlé harcsából', 'Hal', 'Leves', 2000),
-    ('Tejszínes gyümölcsleves', 'Tejszín', 'Leves', 1800),
-    -- További levesek ...
-
--- Főételek, köretek, desszertek és italok beszúrása hasonló módon
--- ...
-
--- Példa főételek
-INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', 4500),
-    ('Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', 3200),
-    ('Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', 3000),
-    ('Sült Keszeg', 'Hal', 'Főétel', 4200),
-    ('Milánói Makaróni', 'Glutén', 'Főétel', 2800),
-    ('Rántott csirkecomb', 'Tojás, glutén', 'Főétel', 2500),
-
-    -- További főételek ...
-
--- Példa köretek
-INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Petrezselymes Burgonyapüré', 'Tej', 'Köret', 1200),
-    ('Friss Zöldségkeverék', 'Nincs', 'Köret', 1000),
-    ('Burgonyahasáb', 'Nincs', 'Köret', 1000),
-    ('Főtt rizs', 'Nincs', 'Köret', 1000),
-    -- További köretek ...
-
--- Példa desszertek
-INSERT INTO etelek (nev, allergenek, kategoria, ar) VALUES
-    ('Csokoládé Mousse', 'Tej, tojás', 'Sütemény', 1800),
-    ('Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', 2000),
-    ('Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', 1500),
-    ('Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', 2200),
-    ('vanilia fagylalt', 'Tej', 'Sütemény', 1700),
-    -- További desszertek ...
-
--- Példa italok
-INSERT INTO italok (nev, allergenek, kategoria, ar) VALUES
-    ('Fanta', 'Nincs', 'Nem alkoholos ital', 800),
-    ('Cappy narancs', 'Nincs', 'Nem alkoholos ital', 1000),
-    ('Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', 2000),
-    ('Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', 1000),
-    ('Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', 500),
-    ('Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', 500),
-    -- További nem alkoholos italok ...
-
--- Példa alkoholos italok
-INSERT INTO italok (nev, allergenek, kategoria, ar) VALUES
-    ('Vörösbor', 'Szőlő', 'Alkoholos', 2500),
-    ('Martini', 'Nincs', 'Alkoholos', 1800),
-    ('Jameson', 'Nincs', 'Alkoholos', 2800),
-    ('Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', 1500),
-    -- További alkoholos italok ...
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
