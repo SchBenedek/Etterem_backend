@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Már 03. 16:54
--- Kiszolgáló verziója: 10.4.27-MariaDB
--- PHP verzió: 8.1.12
+-- Létrehozás ideje: 2024. Már 04. 12:20
+-- Kiszolgáló verziója: 10.4.25-MariaDB
+-- PHP verzió: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `szteszt_étterem`
+-- Adatbázis: `sztesztetter`
 --
 
 -- --------------------------------------------------------
@@ -32,37 +32,38 @@ CREATE TABLE `etelek` (
   `nev` varchar(255) NOT NULL,
   `allergenek` varchar(255) DEFAULT NULL,
   `kategoria` varchar(50) DEFAULT NULL,
-  `ar` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `ar` decimal(10,2) NOT NULL,
+  `kepek` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `etelek`
 --
 
-INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`) VALUES
-(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00'),
-(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00'),
-(3, 'Sajttál', 'Tej', 'Előétel', '2500.00'),
-(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00'),
-(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00'),
-(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00'),
-(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00'),
-(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00'),
-(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00'),
-(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00'),
-(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00'),
-(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00'),
-(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00'),
-(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00'),
-(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00'),
-(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00'),
-(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00'),
-(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00'),
-(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00'),
-(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00'),
-(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00'),
-(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00'),
-(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00');
+INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
+(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00', NULL),
+(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00', NULL),
+(3, 'Sajttál', 'Tej', 'Előétel', '2500.00', NULL),
+(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00', NULL),
+(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00', NULL),
+(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00', NULL),
+(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00', NULL),
+(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00', NULL),
+(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00', NULL),
+(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00', NULL),
+(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00', NULL),
+(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00', NULL),
+(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00', NULL),
+(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00', NULL),
+(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00', NULL),
+(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00', NULL),
+(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00', NULL),
+(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00', NULL),
+(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00', NULL),
+(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', NULL),
+(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', NULL),
+(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', NULL),
+(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', NULL);
 
 -- --------------------------------------------------------
 
@@ -75,24 +76,25 @@ CREATE TABLE `italok` (
   `nev` varchar(255) NOT NULL,
   `allergenek` varchar(255) DEFAULT NULL,
   `kategoria` varchar(50) DEFAULT NULL,
-  `ar` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `ar` decimal(10,2) NOT NULL,
+  `kepek` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `italok`
 --
 
-INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`) VALUES
-(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00'),
-(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00'),
-(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00'),
-(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00'),
-(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00'),
-(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00'),
-(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00'),
-(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00'),
-(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00'),
-(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00');
+INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
+(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', NULL),
+(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', NULL),
+(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', NULL),
+(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', NULL),
+(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', NULL),
+(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', NULL),
+(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', NULL),
+(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', NULL),
+(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', NULL),
+(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', NULL);
 
 -- --------------------------------------------------------
 
@@ -106,7 +108,7 @@ CREATE TABLE `nyitvatartas` (
   `kezdo_idopont` time DEFAULT NULL,
   `veg_idopont` time DEFAULT NULL,
   `zarva` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `nyitvatartas`
@@ -133,7 +135,7 @@ CREATE TABLE `unnepnapok` (
   `kezdo_idopont` time DEFAULT NULL,
   `veg_idopont` time DEFAULT NULL,
   `zarva` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `unnepnapok`
