@@ -34,7 +34,7 @@ app.get('/unnepnapok', async (req,res)=>{
 });
 
 app.get('/etelek', async (req,res)=>{
-    const temp = await db.query('SELECT nev, allergenek, kategoria, kepek, ar FROM etelek')
+    const temp = await db.query('SELECT nev, allergenek, kategoria, ar, kepek FROM etelek')
     const rows = temp[0];
     const fields = temp[1];
     res.send(rows);
