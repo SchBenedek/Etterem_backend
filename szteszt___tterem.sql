@@ -33,7 +33,7 @@ CREATE TABLE `etelek` (
   `allergenek` varchar(255) DEFAULT NULL,
   `kategoria` varchar(50) DEFAULT NULL,
   `ar` decimal(10,2) NOT NULL,
-  `kepek` varchar(20) DEFAULT NULL
+  `kepek` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
