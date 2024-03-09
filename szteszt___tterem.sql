@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `sztesztetter`
+-- Adatbázis: `szteszt__tterem`
 --
 
 -- --------------------------------------------------------
@@ -41,29 +41,29 @@ CREATE TABLE `etelek` (
 --
 
 INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
-(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00', NULL),
-(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00', NULL),
-(3, 'Sajttál', 'Tej', 'Előétel', '2500.00', NULL),
-(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00', NULL),
-(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00', NULL),
-(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00', NULL),
-(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00', NULL),
-(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00', NULL),
-(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00', NULL),
-(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00', NULL),
-(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00', NULL),
-(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00', NULL),
-(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00', NULL),
-(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00', NULL),
-(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00', NULL),
-(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00', NULL),
-(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00', NULL),
-(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00', NULL),
-(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00', NULL),
-(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', NULL),
-(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', NULL),
-(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', NULL),
-(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', NULL);
+(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00', './etelkepek/GrillezettGarnélarák.jpg'),
+(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00', './etelkepek/KrémesGombafőzelékBruschettával.jfif'),
+(3, 'Sajttál', 'Tej', 'Előétel', '2500.00', './etelkepek/Sajttál.jpg'),
+(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00', './etelkepek/TavasziZöldséglevesGyömbérrel.jpg'),
+(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00', './etelkepek/Csirkehúsleves.jpg'),
+(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00', './etelkepek/Halászlépontyból.jpg'),
+(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00', './etelkepek/Halászléharcsából.jpg'),
+(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00', './etelkepek/Tejszínesgyümölcsleves.jpg'),
+(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00', './etelkepek/SültLazac.jpg'),
+(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00', './etelkepek/PaprikásCsirkeNokedlivel.jpg'),
+(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00', './etelkepek/Vadasmártászsemlegombóccal.jpg'),
+(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00', './etelkepek/SültKeszeg.jfif'),
+(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00', './etelkepek/MilánóiMakaróni.webp'),
+(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00', './etelkepek/Rántottcsirkecomb.jpg'),
+(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00', './etelkepek/PetrezselymesBurgonyapüré.jfif'),
+(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00', './etelkepek/FrissZöldségkeverék.jfif'),
+(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00', './etelkepek/Burgonyahasáb.jpg'),
+(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00', './etelkepek/Főttrizs.jpg'),
+(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00', './etelkepek/CsokoládéMousse.jpg'),
+(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', './etelkepek/VaníliásPannaCottaGyümölcsraguval.jpg'),
+(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', './etelkepek/Palacsinta.jpg'),
+(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', './etelkepek/Gőzgombóc.jpg'),
+(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', './etelkepek/vaniliafagylalt.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,16 +85,16 @@ CREATE TABLE `italok` (
 --
 
 INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
-(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', NULL),
-(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', NULL),
-(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', NULL),
-(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', NULL),
-(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', NULL),
-(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', NULL),
-(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', NULL),
-(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', NULL),
-(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', NULL),
-(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', NULL);
+(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', './etelkepek/'),
+(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', './etelkepek/'),
+(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', './etelkepek/'),
+(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', './etelkepek/'),
+(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './etelkepek/'),
+(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './etelkepek/'),
+(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', './etelkepek/'),
+(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', './etelkepek/'),
+(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', './etelkepek/'),
+(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', './etelkepek/');
 
 -- --------------------------------------------------------
 
