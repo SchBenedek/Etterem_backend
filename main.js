@@ -41,7 +41,7 @@ app.get('/etelek', async (req,res)=>{
 });
 
 app.get('/italok', async (req,res)=>{
-    const temp = await db.query('SELECT nev, allergenek, kategoria, ar FROM italok')
+    const temp = await db.query('SELECT nev, allergenek, kategoria, kepek, ar FROM italok')
     const rows = temp[0];
     const fields = temp[1];
     res.send(rows);
