@@ -63,7 +63,7 @@ INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VAL
 (20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', './etelkepek/VaníliaPannaCottaGyümölcsraguval.jpg'),
 (21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', './etelkepek/Palacsinta.jpg'),
 (22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', './etelkepek/Gőzgombóc.jpg'),
-(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', './etelkepek/vaniliafagylalt.jpg');
+(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', './etelkepek/Vaniliafagylalt.jpg');
 
 -- --------------------------------------------------------
 
