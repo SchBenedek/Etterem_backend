@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Már 04. 12:20
--- Kiszolgáló verziója: 10.4.25-MariaDB
--- PHP verzió: 8.1.10
+-- Létrehozás ideje: 2024. Már 10. 13:25
+-- Kiszolgáló verziója: 10.4.27-MariaDB
+-- PHP verzió: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `etelek` (
   `kategoria` varchar(50) DEFAULT NULL,
   `ar` decimal(10,2) NOT NULL,
   `kepek` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `etelek`
@@ -63,7 +63,7 @@ INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VAL
 (20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', './etelkepek/VaníliaPannaCottaGyümölcsraguval.jpg'),
 (21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', './etelkepek/Palacsinta.jpg'),
 (22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', './etelkepek/Gőzgombóc.jpg'),
-(23, 'vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', './etelkepek/Vaniliafagylalt.jpg');
+(23, 'Vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', './etelkepek/vaniliafagylalt.jpg');
 
 -- --------------------------------------------------------
 
@@ -77,24 +77,24 @@ CREATE TABLE `italok` (
   `allergenek` varchar(255) DEFAULT NULL,
   `kategoria` varchar(50) DEFAULT NULL,
   `ar` decimal(10,2) NOT NULL,
-  `kepek` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `kepek` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `italok`
 --
 
 INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
-(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', './etelkepek/'),
-(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', './etelkepek/'),
-(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', './etelkepek/'),
-(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', './etelkepek/'),
-(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './etelkepek/'),
-(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './etelkepek/'),
-(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', './etelkepek/'),
-(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', './etelkepek/'),
-(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', './etelkepek/'),
-(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', './etelkepek/');
+(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', './italkepek/Fanta.png'),
+(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', './italkepek/Cappy.png'),
+(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', './italkepek/Limonádé.png'),
+(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', './italkepek/Limonádé.png'),
+(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './italkepek/Víz.png'),
+(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './italkepek/Víz.png'),
+(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', './italkepek/Vörösbor.png'),
+(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', './italkepek/Martini.png'),
+(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', './italkepek/Jameson.png'),
+(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', './italkepek/Pálinka.png');
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE `nyitvatartas` (
   `kezdo_idopont` time DEFAULT NULL,
   `veg_idopont` time DEFAULT NULL,
   `zarva` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `nyitvatartas`
@@ -135,7 +135,7 @@ CREATE TABLE `unnepnapok` (
   `kezdo_idopont` time DEFAULT NULL,
   `veg_idopont` time DEFAULT NULL,
   `zarva` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `unnepnapok`
