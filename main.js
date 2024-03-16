@@ -2,6 +2,7 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 import bodyParser from "body-parser";
+import 'dotenv/config'
 
 const app = express();
 let jsonParser = bodyParser.json();
@@ -9,8 +10,9 @@ let jsonParser = bodyParser.json();
 const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'szteszt__tterem',
+    password: process.env.password,
+    database: 'szteszt_étterem',
+    port: process.env.port
 }).promise();
 
 app.use(cors());
@@ -46,5 +48,6 @@ app.get('/italok', async (req,res)=>{
     const fields = temp[1];
     res.send(rows);
 });
+
 
 app.listen(3000);
