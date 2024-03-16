@@ -1,1 +1,1 @@
-# Backend for (www.github.com/notkissbe/petriketterem_react)
+# Backend for www.github.com/notkissbe/petriketterem_react
