@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Már 10. 13:25
--- Kiszolgáló verziója: 10.4.27-MariaDB
--- PHP verzió: 8.1.12
+-- Host: db
+-- Generation Time: Mar 17, 2024 at 01:38 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,26 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `szteszt__tterem`
+-- Database: `szteszt_étterem`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `etelek`
+-- Table structure for table `etelek`
 --
 
 CREATE TABLE `etelek` (
-  `id` int(11) NOT NULL,
-  `nev` varchar(255) NOT NULL,
-  `allergenek` varchar(255) DEFAULT NULL,
-  `kategoria` varchar(50) DEFAULT NULL,
+  `id` int NOT NULL,
+  `nev` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `allergenek` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `kategoria` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ar` decimal(10,2) NOT NULL,
-  `kepek` varchar(255) DEFAULT NULL
+  `kepek` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- A tábla adatainak kiíratása `etelek`
+-- Dumping data for table `etelek`
 --
 
 INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
@@ -68,20 +68,20 @@ INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VAL
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `italok`
+-- Table structure for table `italok`
 --
 
 CREATE TABLE `italok` (
-  `id` int(11) NOT NULL,
-  `nev` varchar(255) NOT NULL,
-  `allergenek` varchar(255) DEFAULT NULL,
-  `kategoria` varchar(50) DEFAULT NULL,
+  `id` int NOT NULL,
+  `nev` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `allergenek` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `kategoria` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ar` decimal(10,2) NOT NULL,
-  `kepek` varchar(255) DEFAULT NULL
+  `kepek` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- A tábla adatainak kiíratása `italok`
+-- Dumping data for table `italok`
 --
 
 INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
@@ -99,19 +99,19 @@ INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VAL
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `nyitvatartas`
+-- Table structure for table `nyitvatartas`
 --
 
 CREATE TABLE `nyitvatartas` (
-  `id` int(11) NOT NULL,
-  `nap` varchar(255) DEFAULT NULL,
+  `id` int NOT NULL,
+  `nap` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `kezdo_idopont` time DEFAULT NULL,
   `veg_idopont` time DEFAULT NULL,
   `zarva` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- A tábla adatainak kiíratása `nyitvatartas`
+-- Dumping data for table `nyitvatartas`
 --
 
 INSERT INTO `nyitvatartas` (`id`, `nap`, `kezdo_idopont`, `veg_idopont`, `zarva`) VALUES
@@ -126,19 +126,19 @@ INSERT INTO `nyitvatartas` (`id`, `nap`, `kezdo_idopont`, `veg_idopont`, `zarva`
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `unnepnapok`
+-- Table structure for table `unnepnapok`
 --
 
 CREATE TABLE `unnepnapok` (
-  `id` int(11) NOT NULL,
-  `datum` date DEFAULT NULL,
+  `id` int NOT NULL,
+  `datum` varchar(16) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `kezdo_idopont` time DEFAULT NULL,
   `veg_idopont` time DEFAULT NULL,
   `zarva` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- A tábla adatainak kiíratása `unnepnapok`
+-- Dumping data for table `unnepnapok`
 --
 
 INSERT INTO `unnepnapok` (`id`, `datum`, `kezdo_idopont`, `veg_idopont`, `zarva`) VALUES
@@ -149,60 +149,60 @@ INSERT INTO `unnepnapok` (`id`, `datum`, `kezdo_idopont`, `veg_idopont`, `zarva`
 (5, '2025-01-01', '10:00:00', '20:00:00', 1);
 
 --
--- Indexek a kiírt táblákhoz
+-- Indexes for dumped tables
 --
 
 --
--- A tábla indexei `etelek`
+-- Indexes for table `etelek`
 --
 ALTER TABLE `etelek`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `italok`
+-- Indexes for table `italok`
 --
 ALTER TABLE `italok`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `nyitvatartas`
+-- Indexes for table `nyitvatartas`
 --
 ALTER TABLE `nyitvatartas`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `unnepnapok`
+-- Indexes for table `unnepnapok`
 --
 ALTER TABLE `unnepnapok`
   ADD PRIMARY KEY (`id`);
 
 --
--- A kiírt táblák AUTO_INCREMENT értéke
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT a táblához `etelek`
+-- AUTO_INCREMENT for table `etelek`
 --
 ALTER TABLE `etelek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT a táblához `italok`
+-- AUTO_INCREMENT for table `italok`
 --
 ALTER TABLE `italok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT a táblához `nyitvatartas`
+-- AUTO_INCREMENT for table `nyitvatartas`
 --
 ALTER TABLE `nyitvatartas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT a táblához `unnepnapok`
+-- AUTO_INCREMENT for table `unnepnapok`
 --
 ALTER TABLE `unnepnapok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
