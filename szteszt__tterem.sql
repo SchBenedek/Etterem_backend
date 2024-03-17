@@ -41,29 +41,29 @@ CREATE TABLE `etelek` (
 --
 
 INSERT INTO `etelek` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
-(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00', './etelkepek/GrillezettGarnélarák.jpg'),
-(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00', './etelkepek/KrémesGombafőzelékBruschettával.jfif'),
-(3, 'Sajttál', 'Tej', 'Előétel', '2500.00', './etelkepek/Sajttál.jpg'),
-(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00', './etelkepek/TavasziZöldséglevesGyömbérrel.jpg'),
-(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00', './etelkepek/Csirkéshúsleves.jpg'),
-(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00', './etelkepek/Halászlépontyból.avif'),
-(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00', './etelkepek/Halászléharcsából.jpg'),
-(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00', './etelkepek/Tejszínesgyümölcsleves.jpg'),
-(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00', './etelkepek/SültLazac.jpg'),
-(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00', './etelkepek/PaprikásCsirkeNokedlivel.jpeg'),
-(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00', './etelkepek/Vadasmártászsemlegombóccal.jpg'),
-(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00', './etelkepek/SültKeszeg.jfif'),
-(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00', './etelkepek/MilánóiMakaróni.webp'),
-(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00', './etelkepek/Rántottcsirkecomb.jpg'),
-(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00', './etelkepek/PetrezselymesBurgonyapüré.jfif'),
-(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00', './etelkepek/FrissZöldségkeverék.jfif'),
-(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00', './etelkepek/Burgonyahasáb.jpg'),
-(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00', './etelkepek/Főttrizs.jpg'),
-(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00', './etelkepek/CsokoládéMousse.jpg'),
-(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', './etelkepek/VaníliaPannaCottaGyümölcsraguval.jpg'),
-(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', './etelkepek/Palacsinta.jpg'),
-(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', './etelkepek/Gőzgombóc.jpg'),
-(23, 'Vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', './etelkepek/vaniliafagylalt.jpg');
+(1, 'Grillezett Garnélarák', 'Tenger gyümölcsei, mustár', 'Előétel', '3500.00', 'GrillezettGarnélarák.jpg'),
+(2, 'Krémes Gombafőzelék Bruschettával', 'Tej, glutén', 'Előétel', '2800.00', 'KrémesGombafőzelékBruschettával.jfif'),
+(3, 'Sajttál', 'Tej', 'Előétel', '2500.00', 'Sajttál.jpg'),
+(4, 'Tavaszi Zöldségleves Gyömbérrel', 'Zeller, hagyma', 'Leves', '1500.00', 'TavasziZöldséglevesGyömbérrel.jpg'),
+(5, 'Csirkés húsleves', 'Zeller, hagyma', 'Leves', '1000.00', 'Csirkéshúsleves.jpg'),
+(6, 'Halászlé pontyból', 'Hal', 'Leves', '2000.00', 'Halászlépontyból.avif'),
+(7, 'Halászlé harcsából', 'Hal', 'Leves', '2000.00', 'Halászléharcsából.jpg'),
+(8, 'Tejszínes gyümölcsleves', 'Tejszín', 'Leves', '1800.00', 'Tejszínesgyümölcsleves.jpg'),
+(9, 'Sült Lazac Citrommártással', 'Hal, citrom, mustár', 'Főétel', '4500.00', 'SültLazac.jpg'),
+(10, 'Paprikás Csirke Nokedlivel', 'Tej, tojás, glutén', 'Főétel', '3200.00', 'PaprikásCsirkeNokedlivel.jpeg'),
+(11, 'Vadas mártás zsemlegombóccal', 'Glutén', 'Főétel', '3000.00', 'Vadasmártászsemlegombóccal.jpg'),
+(12, 'Sült Keszeg', 'Hal', 'Főétel', '4200.00', 'SültKeszeg.jfif'),
+(13, 'Milánói Makaróni', 'Glutén', 'Főétel', '2800.00', 'MilánóiMakaróni.webp'),
+(14, 'Rántott csirkecomb', 'Tojás, glutén', 'Főétel', '2500.00', 'Rántottcsirkecomb.jpg'),
+(15, 'Petrezselymes Burgonyapüré', 'Tej', 'Köret', '1200.00', 'PetrezselymesBurgonyapüré.jfif'),
+(16, 'Friss Zöldségkeverék', 'Nincs', 'Köret', '1000.00', 'FrissZöldségkeverék.jfif'),
+(17, 'Burgonyahasáb', 'Nincs', 'Köret', '1000.00', 'Burgonyahasáb.jpg'),
+(18, 'Főtt rizs', 'Nincs', 'Köret', '1000.00', 'Főttrizs.jpg'),
+(19, 'Csokoládé Mousse', 'Tej, tojás', 'Sütemény', '1800.00', 'CsokoládéMousse.jpg'),
+(20, 'Vanília Panna Cotta Gyümölcsraguval', 'Tej', 'Sütemény', '2000.00', 'VaníliaPannaCottaGyümölcsraguval.jpg'),
+(21, 'Palacsinta (kakaós, fahéjas, ízes)', 'Tej', 'Sütemény', '1500.00', 'Palacsinta.jpg'),
+(22, 'Gőzgombóc (szilvalekvár, kakaós)', 'Tej', 'Sütemény', '2200.00', 'Gőzgombóc.jpg'),
+(23, 'Vanilia fagylalt', 'Tej', 'Sütemény', '1700.00', 'vaniliafagylalt.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,16 +85,16 @@ CREATE TABLE `italok` (
 --
 
 INSERT INTO `italok` (`id`, `nev`, `allergenek`, `kategoria`, `ar`, `kepek`) VALUES
-(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', './italkepek/Fanta.png'),
-(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', './italkepek/Cappy.png'),
-(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', './italkepek/Limonádé.png'),
-(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', './italkepek/Limonádé.png'),
-(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './italkepek/Víz.png'),
-(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', './italkepek/Víz.png'),
-(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', './italkepek/Vörösbor.png'),
-(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', './italkepek/Martini.png'),
-(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', './italkepek/Jameson.png'),
-(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', './italkepek/Pálinka.png');
+(1, 'Fanta', 'Nincs', 'Nem alkoholos ital', '800.00', 'Fanta.png'),
+(2, 'Cappy narancs', 'Nincs', 'Nem alkoholos ital', '1000.00', 'Cappy.png'),
+(3, 'Házi limonádé 1l (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '2000.00', 'Limonádé.png'),
+(4, 'Házi limonádé 5dl (citrom, lime, bodza)', 'Nincs', 'Nem alkoholos ital', '1000.00', 'Limonádé.png'),
+(5, 'Szénsavmentes ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', 'Víz.png'),
+(6, 'Szénsavas ásványvíz', 'Nincs', 'Nem alkoholos ital', '500.00', 'Víz.png'),
+(7, 'Vörösbor', 'Szőlő', 'Alkoholos', '2500.00', 'Vörösbor.png'),
+(8, 'Martini', 'Nincs', 'Alkoholos', '1800.00', 'Martini.png'),
+(9, 'Jameson', 'Nincs', 'Alkoholos', '2800.00', 'Jameson.png'),
+(10, 'Házi pálinka (barack, alma)', 'Nincs', 'Alkoholos', '1500.00', 'Pálinka.png');
 
 -- --------------------------------------------------------
 

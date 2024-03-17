@@ -12,7 +12,7 @@ let jsonParser = bodyParser.json();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'images/')
+      cb(null, 'public/images/')
     },
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -30,6 +30,7 @@ const db = mysql.createPool({
 }).promise();
 
 app.use(cors());
+app.use(express.static('public'))
 
 app.get('/', (req,res)=>{
     res.send("ok");
@@ -67,6 +68,7 @@ app.post('/upload', upload.single('image'),async (req,res,next)=>{
     let nev = req.body.nev;
     let result = await db.query(`SELECT nev from etelek WHERE nev="${nev}";`);
     let result2 = await db.query(`SELECT nev from italok WHERE nev="${nev}";`);
+    console.log(req.file.filename)
     if(result[0].length == 0 && result2[0].length == 0){
         const temp = await db.query(`
                 INSERT INTO italok (nev,allergenek,kategoria,ar,kepek)
